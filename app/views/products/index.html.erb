@@ -10,7 +10,7 @@
       <%= product.company %>
       <%= product.stock %>
       <%= product.category %>
-      <%= product.image %>
+      <%= image_tag product.image %>
       <%= link_to "edit", edit_product_path(product) %>
       <%= link_to "delete", product, method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
