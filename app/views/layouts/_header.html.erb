@@ -1,9 +1,9 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top">
 	<div>
-		<%= link_to image_tag("logo.png", alt:"hair-gain logo", style:"width:200px;"), root_path %>
+		<%= link_to image_tag("logo.png", alt:"hair-gain logo", style:"width:200px;", id: "logo"), root_path %>
 	</div>
 
-	<div class="container">
+	<div style="float: left; margin-left: 90px;">
 		<nav>
 			<ul class="nav navbar-nav navbar-right">
 				<li><%= link_to "トップ", root_path %></li>
@@ -13,7 +13,7 @@
 			</ul>
 		</nav>
 	</div>
-	<div class="container">
+	<div class="container" style="float: right; margin-right: 90px;">
 		<% if logged_in? %>
 			<li><%= link_to "ユーザ", '#' %></li>
 			<li class="dropdown">
@@ -30,9 +30,13 @@
 					</li>
 				</ul>
 			</li>
-				<% else %>
-				<li><%= link_to "新規登録", signup_path, class: "btn btn-lg btn-primary" %></li>
-			<li><%= link_to "ログイン", login_path, class: "btn btn-lg btn-primary" %></li>
+		<% else %>
+			<nav>
+				<ul class="nav navbar-nav navbar-right">
+					<li><%= link_to "新規登録", signup_path %></li>
+					<li><%= link_to "ログイン", login_path %></li>
+				</ul>
+			</nav>
 		<% end %>
 	</div>
 </header>
