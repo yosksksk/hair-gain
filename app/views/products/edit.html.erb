@@ -20,6 +20,12 @@
       <%= f.label :stock %>
       <%= f.number_field :stock, class: 'form-control' %>
 
+      <%= f.label :category %>
+      <%= f.text_field :category, class: 'form-control' %>
+
+      <%= f.label :image %>
+      <%= f.file_field :image %><br>
+
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 

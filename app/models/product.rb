@@ -5,4 +5,6 @@ class Product < ApplicationRecord
   validates :company, presence: true
   validates :stock, presence: true
 
+  mount_uploader :image, ImageUploader
+
 end
