@@ -5,10 +5,13 @@
   <% @products.each do |product| %>
     <li>
       <%= link_to product.name, product %>
-      <%= link_to product.price, product %>
-      <%= link_to product.introduction, product %>
-      <%= link_to product.company, product %>
-      <%= link_to product.stock, product %>
+      <%= product.price %>
+      <%= product.introduction %>
+      <%= product.company %>
+      <%= product.stock %>
+      <%= product.category %>
+      <%= product.image %>
+      <%= link_to "edit", edit_product_path(product) %>
       <%= link_to "delete", product, method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
 </ul>
