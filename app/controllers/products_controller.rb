@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
-      redirect_to product_show_path(@product)
+      redirect_to products_path(@product)
     else
       render 'edit'
     end
