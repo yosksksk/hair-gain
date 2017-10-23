@@ -1,17 +1,16 @@
-<% provide(:title, 'All products') %>
-<h1>All products</h1>
+<% provide(:title, '商品一覧') %>
+<h1>商品一覧</h1>
 
 <ul class="products">
   <% @products.each do |product| %>
-    <li>
-      <%= link_to product.name, product %>
-      <%= product.price %>
-      <%= product.introduction %>
-      <%= product.company %>
-      <%= product.stock %>
-      <%= product.category %>
-      <%= product.image %>
-      <%= link_to "edit", edit_product_path(product) %>
-      <%= link_to "delete", product, method: :delete, data: { confirm: "You sure?" } %>
+    <div class="card">
+      <%= image_tag product.image, style:"width: 100%;"%>
+      <div class="container">
+        <h4><b><%= product.name %></b></h4>
+        <p><%= product.price %>円(税込)</p>
+        <%= link_to "edit", edit_product_path(product) %>
+        <%= link_to "delete", product, method: :delete, data: { confirm: "You sure?" } %>
+      </div>
+    </div>
   <% end %>
 </ul>
