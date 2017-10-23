@@ -1,0 +1,14 @@
+<% provide(:title, 'All products') %>
+<h1>All products</h1>
+
+<ul class="products">
+  <% @products.each do |product| %>
+    <li>
+      <%= link_to product.name, product %>
+      <%= link_to product.price, product %>
+      <%= link_to product.introduction, product %>
+      <%= link_to product.company, product %>
+      <%= link_to product.stock, product %>
+      <%= link_to "delete", product, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+</ul>
