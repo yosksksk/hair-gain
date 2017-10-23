@@ -19,7 +19,22 @@ ActiveRecord::Schema.define(version: 20171019073137) do
     t.string "company"
     t.integer "stock"
     t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false 
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.integer "user_type"
+    t.string "name"
+    t.string "reading_name"
+    t.integer "gender"
+    t.date "birthdate"
+    t.string "email"
+    t.integer "tel"
+    t.integer "post_code"
+    t.string "address"
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end
