@@ -292,158 +292,158 @@
 //   }
 // }
 //
-// /* products index */
-//
-// .card {
-//     /* Add shadows to create the "card" effect */
-//     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-//     transition: 0.3s;
-//     width: 30%;
-//     float: left;
-// }
-//
-// /* On mouse-over, add a deeper shadow */
-// .card:hover {
-//     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-// }
-//
-// /* Add some padding inside the card container */
-// .container {
-//     padding: 2px 16px;
-// }
+/* products index */
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 30%;
+    float: left;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
 
 
 /*みよちゃんゾーン*/
-@charset "UTF-8";
-/* Welcome to Compass.
-* In this file you should write your main styles. (or centralize your imports)
-* Import this file using the following HTML or equivalent:
-* <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: 'Roboto', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif;
-  color: #666;
-  text-align: center;
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.header {
-  width: 1240px;
-  margin: 0 auto;
-}
-.header .title {
-  text-align: left;
-  padding: 30px 0 10px;
-}
-.header .title .logo__font {
-  height: 50px;
-  width: auto;
-}
-
-.header__nav {
-  display: flex;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-.header__nav .header__nav--right {
-  margin-left: auto;
-}
-.header__nav a {
-  position: relative;
-  color: #666;
-  display: inline-block;
-  padding: 20px 40px;
-  margin-bottom: 3px;
-  text-decoration: none;
-}
-.header__nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  transform: scaleX(0);
-  background-color: #ff9999;
-  transition: all .4s ease;
-}
-.header__nav a:hover::after {
-  transform: scaleX(1);
-}
-
-/* hero-image */
-.hero-visual {
-  position: relative;
-  z-index: -999;
-}
-.hero-visual .hero-visual-title {
-  position: absolute;
-  z-index: 999;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5rem;
-  color: #fff;
-}
-.hero-visual .header__photo {
-  min-width: 1240px;
-  max-width: 100%;
-}
-
-.wrapper {
-  width: 1240px;
-  margin: 0 auto;
-}
-
-.section__title {
-  padding: 0 0 100px;
-}
-.section__title .title__font {
-  height: 25px;
-  width: auto;
-  margin-bottom: 50px;
-}
-.section__title h1 {
-  position: relative;
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.4;
-  padding: 1.2rem 4rem;
-  display: inline-block;
-}
-.section__title h1::before, .section__title h1::after {
-  content: '';
-  width: 20px;
-  height: 30px;
-  position: absolute;
-  display: inline-block;
-}
-.section__title h1::before {
-  border-left: solid 2px #ff9999;
-  border-top: solid 2px #ff9999;
-  top: 0;
-  left: 0;
-}
-.section__title h1::after {
-  border-right: solid 2px #ff9999;
-  border-bottom: solid 2px #ff9999;
-  bottom: 0;
-  right: 0;
-}
-
-.about {
-  padding-top: 100px;
-}
-
-.feature {
-  padding: 100px 0 100px 0;
-}
+// @charset "UTF-8";
+// /* Welcome to Compass.
+// * In this file you should write your main styles. (or centralize your imports)
+// * Import this file using the following HTML or equivalent:
+// * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+// html {
+//   font-size: 62.5%;
+// }
+//
+// body {
+//   font-family: 'Roboto', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif;
+//   color: #666;
+//   text-align: center;
+// }
+//
+// *, *:before, *:after {
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+//
+// .header {
+//   width: 1240px;
+//   margin: 0 auto;
+// }
+// .header .title {
+//   text-align: left;
+//   padding: 30px 0 10px;
+// }
+// .header .title .logo__font {
+//   height: 50px;
+//   width: auto;
+// }
+//
+// .header__nav {
+//   display: flex;
+//   font-size: 1.3rem;
+//   font-weight: 700;
+// }
+// .header__nav .header__nav--right {
+//   margin-left: auto;
+// }
+// .header__nav a {
+//   position: relative;
+//   color: #666;
+//   display: inline-block;
+//   padding: 20px 40px;
+//   margin-bottom: 3px;
+//   text-decoration: none;
+// }
+// .header__nav a::after {
+//   content: '';
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 5px;
+//   transform: scaleX(0);
+//   background-color: #ff9999;
+//   transition: all .4s ease;
+// }
+// .header__nav a:hover::after {
+//   transform: scaleX(1);
+// }
+//
+// /* hero-image */
+// .hero-visual {
+//   position: relative;
+//   z-index: -999;
+// }
+// .hero-visual .hero-visual-title {
+//   position: absolute;
+//   z-index: 999;
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 5rem;
+//   color: #fff;
+// }
+// .hero-visual .header__photo {
+//   min-width: 1240px;
+//   max-width: 100%;
+// }
+//
+// .wrapper {
+//   width: 1240px;
+//   margin: 0 auto;
+// }
+//
+// .section__title {
+//   padding: 0 0 100px;
+// }
+// .section__title .title__font {
+//   height: 25px;
+//   width: auto;
+//   margin-bottom: 50px;
+// }
+// .section__title h1 {
+//   position: relative;
+//   font-size: 3.5rem;
+//   font-weight: 700;
+//   line-height: 1.4;
+//   padding: 1.2rem 4rem;
+//   display: inline-block;
+// }
+// .section__title h1::before, .section__title h1::after {
+//   content: '';
+//   width: 20px;
+//   height: 30px;
+//   position: absolute;
+//   display: inline-block;
+// }
+// .section__title h1::before {
+//   border-left: solid 2px #ff9999;
+//   border-top: solid 2px #ff9999;
+//   top: 0;
+//   left: 0;
+// }
+// .section__title h1::after {
+//   border-right: solid 2px #ff9999;
+//   border-bottom: solid 2px #ff9999;
+//   bottom: 0;
+//   right: 0;
+// }
+//
+// .about {
+//   padding-top: 100px;
+// }
+//
+// .feature {
+//   padding: 100px 0 100px 0;
+// }
