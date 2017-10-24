@@ -1,0 +1,217 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+* In this file you should write your main styles. (or centralize your imports)
+* Import this file using the following HTML or equivalent:
+* <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif;
+  color: #666;
+  text-align: center;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 1200px;
+  margin: 0 auto;
+}
+.header .title {
+  text-align: left;
+  padding: 30px 80px 10px;
+}
+.header .title .logo__font {
+  height: 50px;
+  width: auto;
+}
+
+.header__nav {
+  display: -webkit-box-flex;
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.header__nav .header__nav--right {
+  margin-left: auto;
+}
+.header__nav a {
+  position: relative;
+  color: #666;
+  display: inline-block;
+  padding: 20px 40px;
+  margin-bottom: 3px;
+  text-decoration: none;
+}
+.header__nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  transform: scaleX(0);
+  background-color: #ff9999;
+  transition: all .4s ease;
+}
+.header__nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* hero-image */
+.hero-visual {
+  position: relative;
+  z-index: -999;
+}
+.hero-visual .hero-visual-title {
+  position: absolute;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: #fff;
+}
+.hero-visual .header__photo {
+  min-width: 1000px;
+  max-width: 100%;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.section__title {
+  padding: 0 0 100px;
+}
+.section__title .title__font {
+  height: 25px;
+  width: auto;
+  margin-bottom: 50px;
+}
+.section__title h1 {
+  position: relative;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  padding: 1.2rem 4rem;
+  display: inline-block;
+}
+.section__title h1::before, .section__title h1::after {
+  content: '';
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  display: inline-block;
+}
+.section__title h1::before {
+  border-left: solid 2px #ff9999;
+  border-top: solid 2px #ff9999;
+  top: 0;
+  left: 0;
+}
+.section__title h1::after {
+  border-right: solid 2px #ff9999;
+  border-bottom: solid 2px #ff9999;
+  bottom: 0;
+  right: 0;
+}
+
+.about {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+.about .about__text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding-bottom: 100px;
+}
+
+.feature {
+  padding: 100px 0;
+  background: rgba(255, 153, 153, 0.1);
+}
+.feature .feature__item {
+  width: 1000px;
+  margin: 0 auto;
+  display: -webkit-box-flex;
+  display: flex;
+}
+.feature .feature__item .feature__items {
+  flex: 1;
+  display: block;
+}
+.feature .feature__item .feature__items .feature__item--photo img {
+  border: solid 2px #ff9999;
+  border-radius: 50%;
+  width: 250px;
+  height: auto;
+}
+.feature .feature__item .feature__items .feature__item--text p {
+  font-size: 1.6rem;
+  padding: 30px 40px 0;
+  line-height: 1.5;
+}
+
+.flow {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 100px 0 150px;
+}
+.flow .flow__item {
+  display: -webkit-box-flex;
+  display: flex;
+  padding-bottom: 100px;
+}
+.flow .flow__item .flow__items {
+  flex: 1;
+  display: block;
+}
+.flow .flow__item .flow__items .flow__item--photo i {
+  color: #ff9999;
+  font-size: 10rem;
+}
+.flow .flow__item .flow__items .flow__item--text p {
+  font-size: 1.6rem;
+  padding: 30px 20px 0;
+  line-height: 1.5;
+}
+
+.footer {
+  background: #ff9999;
+}
+.footer .copyright {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 15px;
+}
+.footer .copyright p {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.square__btn {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 350px;
+  padding: 20px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #fff;
+  background: #ff9999;
+}
+.square__btn:hover {
+  opacity: 0.8;
+}
