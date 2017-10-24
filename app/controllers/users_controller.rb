@@ -25,15 +25,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.user_type = 0
 
-    respond_to do |format|
-      if @user.save
-        log_in @user
-        flash[:success] = 'Welcome to the Sample App!'
-        redirect_to @user
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+
+    if @user.save
+      log_in @user
+      flash[:success] = 'Welcome to the Sample App!'
+      redirect_to @user
+    else
+    render :new
     end
   end
 
