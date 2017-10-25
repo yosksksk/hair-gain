@@ -34,6 +34,11 @@ gem 'carrierwave'
 
 gem 'rmagick', '~> 2.16.0'
 
+gem 'rails-i18n'
+
+gem "payjp"
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

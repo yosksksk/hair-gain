@@ -1,0 +1,15 @@
+<h1>購入確認</h1>
+お届け先住所
+<%= current_user.address %><br>
+連絡先
+<%= current_user.tel %>
+<% current_order.order_items.each do |order_item| %>
+	<%= render 'carts/cart_row', confirm:true, product: order_item.product, order_item: order_item, show_total: true %>
+<% end %>
+
+<h1>購入商品確認</h1>
+
+<br>
+<%= form_tag(action: :pay, method: :post) do %>
+   <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_b2b20f54c57a455b9043fa5e"></script>
+<% end %>
