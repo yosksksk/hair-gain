@@ -14,11 +14,7 @@
 			<%= link_to "edit", edit_product_path(product) %>
 			<%= link_to "delete", product, method: :delete, data: { confirm: "You sure?" } %>
 		</div>
-		<h4 class="text-right">単価:
-			<span style="color: green"><%= number_to_currency product.price %></span>
-		</h4>
 		<%= form_for @order_item, remote: true do |f| %>
-
 		<div class="input-group">
 			<%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
 			<div class="input-group-btn">

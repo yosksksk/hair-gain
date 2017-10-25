@@ -6,13 +6,13 @@ class User < ApplicationRecord
   validates :tel, presence: true, length: { minimum: 6 }
   validates :post_code, presence: true, length: { is: 7 }
   validates :address, presence: true
-	has_secure_password
+  has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
 
-	# 与えられた文字列のハッシュ値を返す
-def User.digest(string)
-	cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-																								BCrypt::Engine.cost
-	BCrypt::Password.create(string, cost: cost)
-end
+  # 与えられた文字列のハッシュ値を返す
+  def self.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 end
