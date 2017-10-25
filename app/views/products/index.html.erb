@@ -1,35 +1,232 @@
 <% provide(:title, '商品一覧') %>
-<h1>商品一覧</h1>
-
-<ul class="products">
-
-	<% @products.each do |product| %>
-	<div class="card">
-		<%= image_tag product.image, style:"width: 100%;"%>
-		<div class="container">
-			<h4>
-				<b><%= product.name %></b>
-			</h4>
-			<p><%= product.price %>円(税込)</p>
-			<%= link_to "edit", edit_product_path(product) %>
-			<%= link_to "delete", product, method: :delete, data: { confirm: "You sure?" } %>
+<div class="pankuzu">
+  <ul>
+    <li><a href="index.html">トップ</a></li>
+    <li><a href="shop01.html">商品一覧</a></li>
+  </ul>
+</div>
+<div class="wrapper1">
+  <section class="side">
+    <h2 class="category__title">
+      カテゴリーから絞る
+    </h2>
+    <div class="category">
+      <h3 class="category__small--title">育毛剤</h3>
+      <ul class="category__small">
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+      </ul>
+    </div>
+    <div class="category">
+      <h3 class="category__small--title">発毛剤</h3>
+      <ul class="category__small">
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+      </ul>
+    </div>
+    <div class="category">
+      <h3 class="category__small--title">育毛サプリメント</h3>
+      <ul class="category__small">
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+      </ul>
+    </div>
+    <div class="category">
+      <h3 class="category__small--title">育毛トニック</h3>
+      <ul class="category__small">
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+        <li><a href="">スカルプD</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="main">
+    <div class="product__item">
+			<div class="product__items">
+        <a href="product01.html">
+          <div class="product__item--photo">
+						<%= image_tag('product01.jpg') %>
+          </div>
+          <div class="product__item--text">
+            <h2>スカルプD<br>¥3,900(税込)</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        </a>
+      </div>
+      <div class="product__items">
+        <a href="product01.html">
+          <div class="product__item--photo">
+						<%= image_tag('product01.jpg') %>
+          </div>
+          <div class="product__item--text">
+            <h2>スカルプD<br>¥3,900(税込)</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        </a>
+      </div>
+			<% @products.each do |product| %>
+			<div class="product__items">
+        <%= link_to product_path(product) do %>
+          <div class="product__item--photo">
+						<%= image_tag product.image %>
+          </div>
+          <div class="product__item--text">
+            <h2><%= product.name %><br>¥<%= product.price %>(税込)</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        <% end %>
+      </div>
+			<% end %>
 		</div>
-		<h4 class="text-right">単価:
-			<span style="color: green"><%= number_to_currency product.price %></span>
-		</h4>
-		<%= form_for @order_item, remote: true do |f| %>
 
-		<div class="input-group">
-			<%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
-			<div class="input-group-btn">
-				<%= f.hidden_field :product_id, value: product.id %>
-
-				<%= f.submit "Add to Cart", class: "btn btn-primary" %>
-			</div>
-		</div>
-		<% end %>
-
-	</div>
-
-	<% end %>
-</ul>
+    <div class="product__item">
+      <div class="product__items">
+        <a href="product01.html">
+          <div class="product__item--photo">
+						<%= image_tag('product01.jpg') %>
+          </div>
+          <div class="product__item--text">
+            <h2>スカルプD<br>¥3,900(税込)</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        </a>
+      </div>
+      <div class="product__items">
+        <a href="product01.html">
+          <div class="product__item--photo">
+						<%= image_tag('product01.jpg') %>
+          </div>
+          <div class="product__item--text">
+            <h2>スカルプD<br>¥3,900(税込)</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        </a>
+      </div>
+      <div class="product__items">
+        <a href="product01.html">
+          <div class="product__item--photo">
+						<%= image_tag('product01.jpg') %>
+          </div>
+          <div class="product__item--text">
+            <h2>スカルプD<br>¥3,900(税込)</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="product__item">
+      <div class="product__items">
+        <a href="product01.html">
+          <div class="product__item--photo">
+						<%= image_tag('product01.jpg') %>
+          </div>
+          <div class="product__item--text">
+            <h2>スカルプD<br>¥3,900(税込)</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        </a>
+      </div>
+      <div class="product__items">
+        <a href="product01.html">
+          <div class="product__item--photo">
+						<%= image_tag('product01.jpg') %>
+          </div>
+          <div class="product__item--text">
+            <h2>スカルプD<br>¥3,900(税込)</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        </a>
+      </div>
+      <div class="product__items">
+        <a href="product01.html">
+          <div class="product__item--photo">
+						<%= image_tag('product01.jpg') %>
+          </div>
+          <div class="product__item--text">
+            <h2>スカルプD<br>¥3,900(税込)</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="page">
+  <ul>
+    <li><a class="select" href="shop01.html">1</a></li>
+    <li><a href="shop02.html">2</a></li>
+    <li><a href="shop03.html">3</a></li>
+    <li><a href="shop02.html"><i class="fa fa-caret-right" aria-hidden="true"></i>
+    </a></li>
+  </ul>
+</div>

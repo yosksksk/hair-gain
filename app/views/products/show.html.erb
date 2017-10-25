@@ -1,5 +1,148 @@
 <% provide(:title, @product.name) %>
-<h1>
-  <%= @product.name %>
-
-</h1>
+<div class="pankuzu">
+    <ul>
+      <li><%= link_to 'トップ', root_path %></li>
+      <li><%= link_to '商品一覧', products_path %></li>
+      <li><%= @product.name %></li>
+    </ul>
+  </div>
+  <div class="wrapper2">
+    <div class="flex__box">
+      <section class="side">
+        <%= image_tag @product.image %>
+      </section>
+      <section class="main">
+        <div class="product__items">
+          <div class="product__item--text">
+            <h2><%= @product.name %></h2>
+            <div class="price">
+              <h2>¥<%= @product.price %>(税込)</h2>
+            </div>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
+          </div>
+        </div>
+        <div class="number">
+          <h2>数量</h2>
+          <input type="number" name="number" min="0" placeholder="個数を選択してください">
+        </div>
+        <a href="" class="square__btn">カートに入れる</a>
+      </section>
+    </div>
+    <div class="product__description">
+      <h2>商品説明</h2>
+      <div class="description__text">
+        <h2>頭皮の厚みに着目した、新生スカルプD登場</h2>
+        <p>圧倒的人気No.1の「スカルプDシャンプー オイリー」が13代目スカルプDとしてリニューアルし、パワーアップ!! 頭皮と毛髪の関係を徹底的に考え、臨床データを基にドクターとの共同開発から導き出した答え。それは頭皮の「厚み」が抜け毛を左右するということでした。 頭皮の厚みに着目した「13代目スカルプD」は頭皮を洗うから、頭皮を変えるシャンプーへと進化。 スカルプボリューマーを新配合することで“しっかり根付く頭皮”へと導きます!! さらには、スカルプD独自の豆乳発酵液を配合することで、男性ホルモンに徹底アプローチ!!
+        </p>
+      </div>
+    </div>
+    <a href="" class="review__btn">レビューを投稿する</a>
+    <div class="review__model">
+      <div class="model__items">
+        <h2>評価の高いレビュー</h2>
+        <div class="review__text">
+          <div class="review__box">
+            <h2>良い</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+            </div>
+          </div>
+          <div class="review__item">
+            <p class="name">投稿者 : 匿名希望さん</p>
+            <p class="day">投稿日 : 2017年10月12日</p>
+          </div>
+          <p>30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
+          </p>
+        </div>
+      </div>
+      <div class="model__items">
+        <h2>評価の低いレビュー</h2>
+        <div class="review__text">
+          <div class="review__box">
+            <h2>悪い</h2>
+            <div class="value">
+              <img src="img/star.png">
+              <img src="img/no_star.png">
+              <img src="img/no_star.png">
+              <img src="img/no_star.png">
+              <img src="img/no_star.png">
+            </div>
+          </div>
+          <div class="review__item">
+            <p class="name">投稿者 : 匿名希望さん</p>
+            <p class="day">投稿日 : 2017年10月12日</p>
+          </div>
+          <p>30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="review">
+      <h2>最新レビュー</h2>
+      <div class="review__text">
+        <div class="review__box">
+          <h2>良い</h2>
+          <div class="value">
+            <img src="img/star.png">
+            <img src="img/star.png">
+            <img src="img/star.png">
+            <img src="img/star.png">
+            <img src="img/no_star.png">
+          </div>
+        </div>
+        <div class="review__item">
+          <p class="name">投稿者 : 匿名希望さん</p>
+          <p class="day">投稿日 : 2017年10月12日</p>
+        </div>
+        <p>30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
+        </p>
+      </div>
+      <div class="review__text">
+        <div class="review__box">
+          <h2>良い</h2>
+          <div class="value">
+            <img src="img/star.png">
+            <img src="img/star.png">
+            <img src="img/star.png">
+            <img src="img/star.png">
+            <img src="img/no_star.png">
+          </div>
+        </div>
+        <div class="review__item">
+          <p class="name">投稿者 : 匿名希望さん</p>
+          <p class="day">投稿日 : 2017年10月12日</p>
+        </div>
+        <p>30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
+        </p>
+      </div>
+      <div class="review__text">
+        <div class="review__box">
+          <h2>良い</h2>
+          <div class="value">
+            <img src="img/star.png">
+            <img src="img/star.png">
+            <img src="img/star.png">
+            <img src="img/star.png">
+            <img src="img/no_star.png">
+          </div>
+        </div>
+        <div class="review__item">
+          <p class="name">投稿者 : 匿名希望さん</p>
+          <p class="day">投稿日 : 2017年10月12日</p>
+        </div>
+        <p>30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
+        </p>
+      </div>
+    </div>
+  </div>
