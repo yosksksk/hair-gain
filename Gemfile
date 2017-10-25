@@ -34,6 +34,10 @@ gem 'carrierwave'
 
 gem 'rmagick', '~> 2.16.0'
 
+gem 'bootstrap3-datetimepicker-rails'
+
+gem 'momentjs-rails', '>= 2.9.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

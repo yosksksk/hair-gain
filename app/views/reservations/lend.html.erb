@@ -1,0 +1,6 @@
+<% @doctors.each do |doctor| %>
+  <% doctor.reservations.each do |reservation| %>
+    <%= reservation.user.username %>
+    <%= reservation.start_date.strftime('%Y年%m月%d日') %>
+  <% end %>
+<% end %>

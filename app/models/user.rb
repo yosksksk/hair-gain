@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :address, presence: true
 	has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+  has_many :reservations, dependent: :destroy
 
 	# 与えられた文字列のハッシュ値を返す
 def User.digest(string)

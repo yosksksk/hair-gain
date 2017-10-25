@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :login_require
 
   # GET /users
   # GET /users.json
@@ -9,7 +10,9 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show; end
+  def show
+    @user = User.find(params[:id])
+  end
 
   # GET /users/new
   def new
@@ -17,14 +20,14 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+  end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
     @user.user_type = 0
-
 
     if @user.save
       log_in @user
@@ -60,6 +63,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def login_require
+      redirect_to login_path unless current_user
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user

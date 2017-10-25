@@ -1,0 +1,29 @@
+<h2>予約一覧です。</h2>
+<h3>ご確認ください。</h3>
+<div style="text-align: -webkit-center;">
+  <table>
+  	<tr><th>10：00</th><td><a href="">予約可能</a></td></tr>
+  	<tr><th>10：30</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th>11：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >11：30</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >12：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >12：30</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >13：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >13：30</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >14：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >14：30</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >15：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >15：30</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >16：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >16：30</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >17：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >17：30</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >18：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >18：30</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >19：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >19：30</th><td><a href="#">予約可能</a></td></tr>
+    <tr><th >20：00</th><td><a href="#">予約可能</a></td></tr>
+  	<tr><th >20：30</th><td><a href="#">予約可能</a></td></tr>
+    <%= button_to '予約可能', reservations_path(user_id: 1, start_date: Time.new(2017, 2, 21, 10, 00, 00).to_time.to_s) %>
+  </table>
+</div>
