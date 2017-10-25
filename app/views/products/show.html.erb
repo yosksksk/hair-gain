@@ -43,7 +43,7 @@
         </p>
       </div>
     </div>
-    <a href="" class="review__btn">レビューを投稿する</a>
+    <%= link_to "レビューを投稿する", new_product_review_path(@product.id) , class:"review__btn" %>
     <div class="review__model">
       <div class="model__items">
         <h2>評価の高いレビュー</h2>
