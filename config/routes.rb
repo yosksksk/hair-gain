@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'review/new'
+
   get 'order_items/create'
 
   get 'order_items/update'
@@ -24,6 +26,10 @@ Rails.application.routes.draw do
   end
   resources :order_items, only: %i[create update destroy]
 
-  resources :products
+  resources :products do
+    resources :reviews
+  end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
