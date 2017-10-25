@@ -1,6 +1,5 @@
 <% provide(:title, "Log in") %>
 <div class="login">
-  <h2 class="login-header">ログイン</h2>
 		<%= form_for(:session, url: login_path ,class: "login-container") do |f| %>
 			<%= f.email_field :email, placeholder:"Email" %>
 			<%= f.password_field :password, placeholder:"Password" %>

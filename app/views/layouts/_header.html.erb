@@ -11,7 +11,7 @@
 			<li><%= link_to "ビデオ通話", "#" %></li>
 			<li class="header__nav--right">
 				<% if logged_in? %>
-					<li><%= link_to "カート内へ",cart_path %></li>
+					<li><%= link_to "カート内へ:#{current_order.order_items.size}",cart_path,class: "cart-text" %></li>
 					<li><%= link_to "アカウント","#" %></li>
 					<li><%= link_to "ログアウト", logout_path, method: "delete" %></li>
 				<% else %>
