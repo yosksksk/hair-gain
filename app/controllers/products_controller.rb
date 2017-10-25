@@ -5,8 +5,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-		@order_item = current_order.order_items.new
-
+    @order_item = current_order.order_items.new
   end
 
   def show
@@ -28,7 +27,7 @@ class ProductsController < ApplicationController
 
   def destroy
     Product.find(params[:id]).destroy
-    flash[:success] = "deleted"
+    flash[:success] = 'deleted'
     redirect_to products_url
   end
 
@@ -43,8 +42,7 @@ class ProductsController < ApplicationController
 
   private
 
-   def product_params
-     params.require(:product).permit(:name, :introduction, :price, :company, :stock, :cagtegory, :image)
-   end
-
+  def product_params
+    params.require(:product).permit(:name, :introduction, :price, :company, :stock, :cagtegory, :image)
+  end
 end

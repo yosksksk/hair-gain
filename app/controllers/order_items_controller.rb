@@ -3,7 +3,6 @@ class OrderItemsController < ApplicationController
     @order = current_order
     if check_cart_item(params[:order_item][:product_id])
 			@order_item = @order.order_items.find_by(product_id:params[:order_item][:product_id])
-			Rails.logger.debug { "#{order_item_params[:quantity].to_i},#{params[:order_item][:quantity].to_i}" }
 			@order_item.update_attribute(:quantity,@order_item[:quantity] + params[:order_item][:quantity].to_i)
 			@order_items = @order.order_items
     else
@@ -11,11 +10,6 @@ class OrderItemsController < ApplicationController
 			@order.save
 			session[:order_id] = @order.id
     end
-    # logger.debug  params[:order_item][:product_id]
-
-    # @order_items = @order.order_items[:product_id]
-    # # すでに注文している商品の中に
-
   end
 
   def update

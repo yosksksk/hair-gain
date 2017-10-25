@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  resource :cart, only: [:show]
+
+  resource :cart, only: [:show] do
+  	get "buy"
+		post "pay"
+  end
   resources :order_items, only: %i[create update destroy]
 
   resources :products
