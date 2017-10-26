@@ -1,17 +1,20 @@
-<%= form_with(model: user, local: true) do |form| %>
-<% if user.errors.any? %>
-<div id="error_explanation">
-	<h2><%= pluralize(user.errors.count, "error") %>
-		prohibited this user from being saved:</h2>
+<div class="user-form">
+	<div class="user-form-header">新規登録</div>
+	<%= form_with(model: user, local: true,class: "user-form-container") do |form| %>
+	<% if user.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= pluralize(user.errors.count, "error") %>
+			prohibited this user from being saved:</h2>
 
-	<ul>
-		<% user.errors.full_messages.each do |message| %>
-		<li><%= message %></li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
-<table id="sign-up-table">
+		<ul>
+			<% user.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+
+<table id="sign-up-table" rules="all">
 	<tr>
 		<th><%= form.label "名前" %></th>
 		<td><%= form.text_field :name%></td>
@@ -23,8 +26,8 @@
 	<tr>
 		<th><%= form.label "性別" %></th>
 		<td>
-			<%= form.radio_button :gender ,0 , :checked => "checked"%>男性
-			<%= form.radio_button :gender, 1%>女性
+			<label>男性<%= form.radio_button :gender ,0 , :checked => "checked"%></label>
+			<label>女性<%= form.radio_button :gender, 1%></label>
 		</td>
 	</tr>
 	<tr>
@@ -62,63 +65,5 @@
 		</td>
 	</tr>
 </table>
-<!--
-<div class="field">
-	<%= form.label "名前" %>
-	<%= form.text_field :name%>
-</div>
-
-<div class="field">
-	<%= form.label :reading_name %>
-	<%= form.text_field :reading_name%>
-</div>
-
-<div class="field">
-	<%= form.label :gender %>
-	<%= form.radio_button :gender ,0 , :checked => "checked"%>男性
-	<%= form.radio_button :gender, 1%>女性
-</div>
-
-<div class="field">
-	<%= form.label :birthdate %>
-	<%= form.date_select :birthdate, {
-		:use_month_numbers => true ,
-		default:Date.new(1989, 1, 1),
-		start_year: 1930,
-		end_year: (Time.now.year - 18)
-		}%>
-</div>
-
-<div class="field">
-	<%= form.label :email %>
-	<%= form.email_field :email %>
-</div>
-
-<div class="field">
-	<%= form.label :password %>
-	<%= form.password_field :password %>
-</div>
-<div class="field">
-	<%= form.label :password_confirmation %>
-	<%= form.password_field :password_confirmation %>
-</div>
-
-<div class="field">
-	<%= form.label :tel %>
-	<%= form.number_field :tel%>
-</div>
-
-<div class="field">
-	<%= form.label :post_code %>
-	<%= form.number_field :post_code%>
-</div>
-
-<div class="field">
-	<%= form.label :address %>
-	<%= form.text_field :address%>
-</div>
-
-<div class="actions">
-	<%= form.submit %>
-</div> -->
 <% end %>
+</div>
