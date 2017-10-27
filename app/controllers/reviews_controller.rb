@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+		
     redirect_to products_path
   end
 
