@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @review[:product_id] = params[:product_id]
     @review[:user_id] = current_user.id
     if @review.save!
-      flash[:success] = "Review created!"
+      flash[:success] = "レビューを投稿しました!"
       redirect_to @product
     else
       redirect_to products_path

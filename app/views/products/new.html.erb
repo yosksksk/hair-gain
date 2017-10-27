@@ -4,31 +4,41 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@product, url: products_path) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :introduction %>
-      <%= f.text_area :introduction %>
-
-      <%= f.label :price %>
-      <%= f.number_field :price %>
-
-      <%= f.label :company %>
-      <%= f.text_field :company %>
-
-      <%= f.label :stock %>
-      <%= f.number_field :stock %>
-
-      <%= f.label :category %>
-      <%= f.text_field :category %>
-
-      <%= f.label :capacity %>
-      <%= f.number_field :capacity %>
-
-      <%=f.label :image %>
-      <%= f.file_field :image %><br>
-
-      <%= f.submit "Create new product", class: "btn btn-primary" %>
+    <table id="sign-up-table">
+      <tr>
+        <th><%= f.label :name %></th>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :introduction %></th>
+        <td><%= f.text_area :introduction %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :price %></th>
+        <td><%= f.number_field :price %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :company %></th>
+        <td><%= f.text_field :company %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :stock %></th>
+        <td><%= f.number_field :stock %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :category %></th>
+        <td><%= f.text_field :category %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :capacity %></th>
+        <td><%= f.number_field :capacity %></td>
+      </tr>
+      <tr>
+        <th><%=f.label :image %></th>
+        <td><%= f.file_field :image %></td>
+      </tr>
+    </table>
+    <%= f.submit "Create new product", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

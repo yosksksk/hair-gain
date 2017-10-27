@@ -1,13 +1,22 @@
-<%= form_for(@review, url: product_reviews_path) do |f| %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
-
-    <%= f.label :content %>
-    <%= f.text_area :content, class: 'form-control' %>
-
-    <%= f.label :star %>
-    <%= f.number_field :star, class: 'form-control' %>
-
-  <%= f.submit "レビューを投稿する", class: "btn btn-primary" %>
+<% if logged_in? %>
+  <%= form_for(@review, url: product_reviews_path) do |f| %>
+    <table id="sign-up-table">
+      <tr>
+        <th><%= f.label "投稿者名" %></th>
+        <td><%= f.text_field :name, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <th><%= f.label "商品のご感想" %></th>
+        <td><%= f.text_area :content, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <th><%= f.label "評価（5点満点）" %></th>
+        <td><%= f.number_field :star, class: 'form-control' %></td>
+      </tr>
+    </table>
+    <%= f.submit "レビューを投稿する", class: "btn btn-primary" %>
+  <% end %>
+<% else %>
+  <h2>レビューを投稿するにはログインが必要です。</h2>
+  <%= link_to "ログインはこちら", login_path, class:"square__btn", style:"margin: 40px;" %>
 <% end %>

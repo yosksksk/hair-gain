@@ -9,7 +9,7 @@
 			<li><%= link_to "予約・チャット", "#" %></li>
 			<li class="header__nav--right">
 				<% if logged_in? %>
-					<li><%= link_to "カート内へ:#{current_order.order_items.size}",cart_path,class: "cart-text" %></li>
+					<li><%= link_to "カート内の商品数：#{current_order.order_items.size}点",cart_path,class: "cart-text" %></li>
 					<li><%= link_to "アカウント","#" %></li>
 					<li><%= link_to "ログアウト", logout_path, method: "delete" %></li>
 				<% else %>
