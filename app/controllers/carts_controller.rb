@@ -11,7 +11,7 @@ class CartsController < ApplicationController
     Rails.logger.debug { "buy value:#{current_order.subtotal}" }
     Payjp.api_key = 'sk_test_181d51db8239a2927f7756ec'
     charge = Payjp::Charge.create(
-      amount: 3500,
+      amount: current_order.subtotal,
       card: params['payjp-token'],
       currency: 'jpy'
     )
