@@ -6,19 +6,19 @@
     <li><%= @product.name %></li>
   </ul>
 </div>
-<div class="wrapper2">
+<div class="product__wrapper">
   <div class="flex__box">
-    <section class="side">
+    <section class="product__side">
       <%= image_tag @product.image %>
     </section>
-    <section class="main">
+    <section class="product__main">
       <div class="product__items">
         <div class="product__item--text">
           <h2 style="text-align: left;"><%= @product.name %></h2>
           <div class="price">
             <h2 style="text-align: left;">¥<%= @product.price.to_s(:delimited) %>(税込)</h2>
           </div>
-          <div class="value" style="text-align: left;">
+          <div class="product__value" , style="text-align: left;">
             <%= image_tag('star.png') %>
             <%= image_tag('star.png') %>
             <%= image_tag('star.png') %>
@@ -27,18 +27,20 @@
           </div>
         </div>
       </div>
-      <div class="number">
-        <h2 style="text-align: left;">数量</h2>
-        <input type="number" name="number" min="0" placeholder="個数を選択してください">
-      </div>
-      <a href="" class="square__btn">カートに入れる</a>
+      <%= form_for @order_item, remote: true do |f| %>
+        <div class="number">
+          <h2 , style="text-align: left;">数量</h2>
+          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+        </div>
+        <%= f.hidden_field :product_id, value: @product.id %>
+        <%= f.submit "カートに入れる", class:"square__btn" %>
+      <% end %>
     </section>
   </div>
   <div class="product__description">
-    <h2 style="text-align: left;">商品説明</h2>
+    <h2>商品説明</h2>
     <div class="description__text">
-      <h2>頭皮の厚みに着目した、新生スカルプD登場</h2>
-      <p style="text-align: left;"><%= @product.introduction %></p>
+      <p , style="text-align: left;"><%= @product.introduction %></p>
     </div>
   </div>
   <%= link_to "レビューを投稿する", new_product_review_path(@product.id) , class:"review__btn" %>
@@ -48,7 +50,7 @@
       <div class="review__text">
         <div class="review__box">
           <h2>良い</h2>
-          <div class="value">
+          <div class="product__value">
             <%= image_tag('star.png') %>
             <%= image_tag('star.png') %>
             <%= image_tag('star.png') %>
@@ -60,7 +62,7 @@
           <p class="name">投稿者 : 匿名希望さん</p>
           <p class="day">投稿日 : 2017年10月12日</p>
         </div>
-        <p>30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
+        <p style="text-align: left;">30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
         </p>
       </div>
     </div>
@@ -69,7 +71,7 @@
       <div class="review__text">
         <div class="review__box">
           <h2>悪い</h2>
-          <div class="value">
+          <div class="product__value">
             <%= image_tag('star.png') %>
             <%= image_tag('star.png') %>
             <%= image_tag('star.png') %>
@@ -81,50 +83,36 @@
           <p class="name">投稿者 : 匿名希望さん</p>
           <p class="day">投稿日 : 2017年10月12日</p>
         </div>
-        <p>30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
+        <p style="text-align: left;">30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
         </p>
       </div>
     </div>
   </div>
   <div class="review">
     <h2>最新レビュー</h2>
-    <div class="review__text">
-      <div class="review__box">
-        <h2>良い</h2>
-        <div class="value">
-          <%= image_tag('star.png') %>
-          <%= image_tag('star.png') %>
-          <%= image_tag('star.png') %>
-          <%= image_tag('star.png') %>
-          <%= image_tag('no_star.png') %>
-        </div>
-      </div>
-      <div class="review__item">
-        <p class="name">投稿者 : 匿名希望さん</p>
-        <p class="day">投稿日 : 2017年10月12日</p>
-      </div>
-      <p>30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
-      </p>
-    </div>
-
-    <% @reviews.each do |review| %>
-      <div class="review__text">
-        <div class="review__box">
-          <h2>星の数：<%= review.star %></h2>
-          <div class="value">
-            <%= image_tag('star.png') %>
-            <%= image_tag('star.png') %>
-            <%= image_tag('star.png') %>
-            <%= image_tag('star.png') %>
-            <%= image_tag('no_star.png') %>
+    <% if @reviews.count != 0 %>
+      <% @reviews.each do |review| %>
+        <div class="review__text">
+          <div class="review__box">
+            <h2>星の数：<%= review.star %></h2>
+            <div class="product__value">
+              <% for i in 1..review.star do %>
+                <%= image_tag('star.png') %>
+              <% end %>
+              <% for i in 0..(5 - review.star) do %>
+                <%= image_tag('no_star.png') %>
+              <% end %>
+            </div>
           </div>
+          <div class="review__item">
+            <p class="name">投稿者 : <%= review.name %>さん</p>
+            <p class="day">投稿日 : <%= review.created_at.strftime('%Y年%m月%d日') %></p>
+          </div>
+          <p style="text-align: left;"><%= review.content %></p>
         </div>
-        <div class="review__item">
-          <p class="name">投稿者 : <%= review.name %>さん</p>
-          <p class="day">投稿日 : <%= review.created_at.strftime('%Y年%m月%d日') %></p>
-        </div>
-        <p><%= review.content %></p>
-      </div>
-    <% end %>
+      <% end %>
+      <% else %>
+      <h4 style="margin: 20px;">この商品にはまだレビューがありません。</h4>
+      <% end %>
   </div>
 </div>

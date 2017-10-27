@@ -5,232 +5,63 @@
 		<li><%= link_to "商品一覧", products_path %></li>
   </ul>
 </div>
-<div class="wrapper1">
-  <section class="side">
-    <h2 class="category__title">
-      カテゴリーから絞る
-    </h2>
+<div class="shop__wrapper">
+  <section class="shop__side">
+    <h2 class="category__title">カテゴリーから絞る</h2>
     <div class="category">
       <h3 class="category__small--title">育毛剤</h3>
       <ul class="category__small">
-        <li><a href="#">チャップアップ</a></li>
-        <li><a href="#">ブブカ(BUBKA)</a></li>
-        <li><a href="#">プランテル(Plantel)</a></li>
-        <li><a href="#">ポリピュア(POLYPURE EX)</a></li>
-        <li><a href="#">イクオス(iQOS)</a></li>
-        <li><a href="#">ファンジア</a></li>
+        <% @products.where(category: "growth").each do |product| %>
+          <li><%= link_to  product.name, product_path(product) %></li>
+        <% end %>
       </ul>
     </div>
     <div class="category">
-      <h3 class="category__small--title">育毛剤</h3>
+      <h3 class="category__small--title">育毛サプリメント</h3>
       <ul class="category__small">
-        <%= @products.where(category: "育毛サプリメント").each do |product| %>
-        <li><%= link_to product_path(product), product.name %></li>
+        <% @products.where(category: "supplement").each do |product| %>
+          <li><%= link_to  product.name, product_path(product) %></li>
         <% end %>
       </ul>
     </div>
     <div class="category">
       <h3 class="category__small--title">発毛剤</h3>
       <ul class="category__small">
-        <li><a href="#">リアップX5プラス</a></li>
-        <li><a href="#">ロゲイン</a></li>
-        <li><a href="#">リアップリジェンヌ</a></li>
-        <li><a href="#">NFカロヤンガッシュ</a></li>
-        <li><a href="#">アデノゲン</a></li>
-        <li><a href="#">ハツモール</a></li>
-      </ul>
-    </div>
-    <div class="category">
-      <h3 class="category__small--title">育毛サプリメント</h3>
-      <ul class="category__small">
-        <li><a href="#">BOSTON</a></li>
-        <li><a href="#">イクオスサプリEX</a></li>
-        <li><a href="#">ぐんぐん</a></li>
-        <li><a href="#">5α-R</a></li>
-        <li><a href="#">Fueruza</a></li>
-        <li><a href="#">マイナチュレサプリメント</a></li>
-        <li><a href="#">チャップアップサプリ</a></li>
+        <% @products.where(category: "treatment").each do |product| %>
+          <li><%= link_to  product.name, product_path(product) %></li>
+        <% end %>
       </ul>
     </div>
     <div class="category">
       <h3 class="category__small--title">育毛トニック</h3>
       <ul class="category__small">
-        <li><a href="#">薬用育毛トニック(花王)</a></li>
-        <li><a href="#">柳屋ヘアトニック</a></li>
-        <li><a href="#">インセント</a></li>
-        <li><a href="#">スカルプ ジェット</a></li>
-        <li><a href="#">フレッシュ リアップ</a></li>
-        <li><a href="#">ウーマフリード スカルプローション</a></li>
+        <% @products.where(category: "tonic").each do |product| %>
+          <li><%= link_to  product.name, product_path(product) %></li>
+        <% end %>
       </ul>
     </div>
   </section>
-  <section class="main">
-    <div class="product__item">
+  <section class="shop__main">
+    <div class="shop__item">
       <% @products.each do |product| %>
-			<div class="product__items">
-        <%= link_to product_path(product) do %>
-          <div class="product__item--photo">
-						<%= image_tag product.image %>
-          </div>
-          <div class="product__item--text">
-
-            <h2><%= product.name %><br>
-            ¥<%= product.price.to_s(:delimited) %>(税込)</h2>
-            <div class="value">
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('no_star.png') %>
+        <div class="shop__items">
+          <%= link_to product_path(product) do %>
+            <div class="shop__item--photo">
+              <%= image_tag product.image, style:"height: 200px; width: auto;" %>
             </div>
-            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
-          </div>
-        <% end %>
-      </div>
-			<% end %>
-      <div class="product__items">
-        <a href="product01.html">
-          <div class="product__item--photo">
-						<%= image_tag('product01.jpg') %>
-          </div>
-          <div class="product__item--text">
-            <h2>スカルプD<br>¥3,900(税込)</h2>
-            <div class="value">
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('no_star.png') %>
+            <div class="shop__item--text">
+              <h2><%= product.name %><br>¥<%= product.price.to_s(:delimited) %>(税込)</h2>
+              <div class="shop__value">
+                <%= image_tag('star.png') %>
+                <%= image_tag('star.png') %>
+                <%= image_tag('star.png') %>
+                <%= image_tag('star.png') %>
+                <%= image_tag('no_star.png') %>
+              </div>
             </div>
-            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
-          </div>
-        </a>
-      </div>
-		</div>
-
-    <div class="product__item">
-      <div class="product__items">
-        <a href="product01.html">
-          <div class="product__item--photo">
-						<%= image_tag('product01.jpg') %>
-          </div>
-          <div class="product__item--text">
-            <h2>スカルプD<br>¥3,900(税込)</h2>
-            <div class="value">
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('no_star.png') %>
-            </div>
-            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
-          </div>
-        </a>
-      </div>
-      <div class="product__items">
-        <a href="product01.html">
-          <div class="product__item--photo">
-						<%= image_tag('product01.jpg') %>
-          </div>
-          <div class="product__item--text">
-            <h2>スカルプD<br>¥3,900(税込)</h2>
-            <div class="value">
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('no_star.png') %>
-            </div>
-            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
-          </div>
-        </a>
-      </div>
-      <div class="product__items">
-        <a href="product01.html">
-          <div class="product__item--photo">
-						<%= image_tag('product01.jpg') %>
-          </div>
-          <div class="product__item--text">
-            <h2>スカルプD<br>¥3,900(税込)</h2>
-            <div class="value">
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('no_star.png') %>
-            </div>
-            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="product__item">
-      <div class="product__items">
-        <a href="product01.html">
-          <div class="product__item--photo">
-						<%= image_tag('product01.jpg') %>
-          </div>
-          <div class="product__item--text">
-            <h2>スカルプD<br>¥3,900(税込)</h2>
-            <div class="value">
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('no_star.png') %>
-            </div>
-            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
-          </div>
-        </a>
-      </div>
-      <div class="product__items">
-        <a href="product01.html">
-          <div class="product__item--photo">
-						<%= image_tag('product01.jpg') %>
-          </div>
-          <div class="product__item--text">
-            <h2>スカルプD<br>¥3,900(税込)</h2>
-            <div class="value">
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('no_star.png') %>
-            </div>
-            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
-          </div>
-        </a>
-      </div>
-      <div class="product__items">
-        <a href="product01.html">
-          <div class="product__item--photo">
-						<%= image_tag('product01.jpg') %>
-          </div>
-          <div class="product__item--text">
-            <h2>スカルプD<br>¥3,900(税込)</h2>
-            <div class="value">
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('star.png') %>
-              <%= image_tag('no_star.png') %>
-            </div>
-            <p>＜ベタつく頭皮をスッキリ洗浄＞スカルプD オイリー[脂性肌用]【医薬部外品】</p>
-          </div>
-        </a>
-      </div>
+          <% end %>
+        </div>
+  	  <% end %>
     </div>
   </section>
-</div>
-<div class="page">
-  <ul>
-    <li><%= link_to  "1", products_path, class:"select" %></li>
-    <li><%= link_to  "2", products_path %></li>
-    <li><%= link_to  "3", products_path %></li>
-    <li>
-      <%= link_to products_path do %>
-        <i class="fa fa-caret-right" aria-hidden="true"></i>
-      <% end %>
-    </li>
-  </ul>
 </div>
