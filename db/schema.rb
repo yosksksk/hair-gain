@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20171027095409) do
 
+  create_table "doctors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.integer "product_id"
     t.integer "order_id"
@@ -52,6 +58,16 @@ ActiveRecord::Schema.define(version: 20171027095409) do
     t.string "image"
     t.string "category"
     t.integer "capacity"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "doctor_id"
+    t.datetime "start_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_reservations_on_doctor_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

@@ -35,24 +35,26 @@
       </div>
       <%= form_for @order_item, remote: true do |f| %>
         <div class="number">
-          <h2 , style="text-align: left;">数量</h2>
+          <h2 style="text-align: left; margin-top: 20px;">数量</h2>
           <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
         </div>
         <%= f.hidden_field :product_id, value: @product.id %>
-        <%= f.submit "カートに入れる", class:"square__btn" %>
+        <div style="text-align: left;">
+          <%= f.submit "カートに入れる", class:"square__btn", style:"border: none;" %>
+      </div>
       <% end %>
     </section>
   </div>
-  <div class="product__description">
-    <h2>商品説明</h2>
-    <div class="description__text">
+  <div class="product__description" style="padding-bottom: 60px;">
+    <h2 style="text-align: left;">商品説明</h2>
+    <div class="description__text" style="padding-top: 20px;">
       <p , style="text-align: left;"><%= @product.introduction %></p>
     </div>
   </div>
   <%= link_to "レビューを投稿する", new_product_review_path(@product.id) , class:"review__btn" %>
   <div class="review__model">
     <div class="model__items">
-      <h2>評価の高いレビュー</h2>
+      <h2 style="text-align: left;">評価の高いレビュー</h2>
       <div class="review__text">
         <div class="review__box">
           <h2>良い</h2>
@@ -73,21 +75,21 @@
       </div>
     </div>
     <div class="model__items">
-      <h2>評価の低いレビュー</h2>
+      <h2 style="text-align: left;">評価の低いレビュー</h2>
       <div class="review__text">
         <div class="review__box">
           <h2>悪い</h2>
           <div class="product__value">
             <%= image_tag('star.png') %>
-            <%= image_tag('star.png') %>
-            <%= image_tag('star.png') %>
-            <%= image_tag('star.png') %>
+            <%= image_tag('no_star.png') %>
+            <%= image_tag('no_star.png') %>
+            <%= image_tag('no_star.png') %>
             <%= image_tag('no_star.png') %>
           </div>
         </div>
         <div class="review__item">
-          <p class="name">投稿者 : 匿名希望さん</p>
-          <p class="day">投稿日 : 2017年10月12日</p>
+          <p class="name">投稿者 : 斎藤さん</p>
+          <p class="day">投稿日 : 2017年10月13日</p>
         </div>
         <p style="text-align: left;">30代になり、抜け毛が増えてきた夫。遺伝を考えると、いつ薄くなってもおかしくないと悩む姿を見て、「試しにアンファーを使ってみたら」と打診し、購入してみました。もうすぐ使い切るタイミングで、次のシャンプーはどうするか聞いたところ、次もアンファーで！と指名。抜け毛が減少してるし、頭皮が痒くならないとのこと。言われてみれば、おふろの浴槽や洗面台にぱらぱらと落ちていた髪の毛が明らかに減りました。続けて使いたいと言うので、2回目は定期購入にします。
         </p>
@@ -95,7 +97,7 @@
     </div>
   </div>
   <div class="review">
-    <h2>最新レビュー</h2>
+    <h2 style="text-align: left;">最新レビュー</h2>
     <% if @reviews.count != 0 %>
       <% @reviews.each do |review| %>
         <div class="review__text">
