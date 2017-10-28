@@ -10,7 +10,7 @@
 			<li class="header__nav--right">
 				<% if logged_in? %>
 					<li><%= link_to "カート内の商品数：#{current_order.order_items.size}点",cart_path,class: "cart-text" %></li>
-					<li><%= link_to "アカウント","#" %></li>
+					<li><%= link_to "アカウント", current_user %></li>
 					<li><%= link_to "ログアウト", logout_path, method: "delete" %></li>
 				<% else %>
 					<li><%= link_to "新規登録", signup_path %></li>

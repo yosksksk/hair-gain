@@ -11,7 +11,7 @@
       </tr>
       <tr>
         <th><%= f.label "評価（5点満点）" %></th>
-        <td><%= f.number_field :star, class: 'form-control' %></td>
+        <td><%= f.number_field :star, value: 3, class: 'form-control' %></td>
       </tr>
     </table>
     <%= f.submit "レビューを投稿する", class: "btn btn-primary" %>
