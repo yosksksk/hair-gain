@@ -1,49 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User type:</strong>
-  <%= @user.user_type %>
-</p>
+<h1 style="margin: 20px;">あなたの個人情報です。</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div>
+  <table style="margin: 0 auto; padding-bottom: 30px;" >
+    <tr>
+      <th>名前</th>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th>ふりがな</th>
+      <td><%= @user.reading_name %></td>
+    </tr>
+    <tr>
+      <th>性別</th>
+      <td><% if @user.gender == 0 %>男性<% else %>女性<% end %></td>
+    </tr>
+    <tr>
+      <th>生年月日</th>
+      <td><%= @user.birthdate %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><%= @user.tel %></td>
+    </tr>
+    <tr>
+      <th>郵便番号</th>
+      <td><%= @user.post_code %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td><%= @user.address %></td>
+    </tr>
+  </table>
+</div>
 
-<p>
-  <strong>Reading name:</strong>
-  <%= @user.reading_name %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong>Birthdate:</strong>
-  <%= @user.birthdate %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @user.tel %>
-</p>
-
-<p>
-  <strong>Post code:</strong>
-  <%= @user.post_code %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
-
-<%= link_to '個人情報を編集する', edit_user_path(@user) %>
-<%= link_to 'トップ画面に戻る', root_path %>
+<div style="margin: 20px;">
+<%= link_to '個人情報を編集する', edit_user_path(@user), class:"square__btn" %><br>
+<%= link_to 'トップ画面に戻る', root_path, class:"square__btn", style:"margin-top: 20px;" %>
+</div>

@@ -1,4 +1,4 @@
-<div class="user-form" style="">
+<div class="user-form" style="width: 600px; height: 680px;">
 	<div class="user-form-header">新規登録</div>
 	<%= form_with(model: user, local: true,class: "user-form-container") do |form| %>
 	<% if user.errors.any? %>
@@ -65,6 +65,6 @@
 			<td><%= form.text_field :address%></td>
 		</tr>
 	</table>
-	<%= submit_tag "登録する", class:"square__btn", style:"" %>
+	<%= submit_tag "登録する", style:"width: 570px; margin-bottom: 20px; border-radius: 30px;" %>
 	<% end %>
 </div>

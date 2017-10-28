@@ -1,4 +1,4 @@
-<h1>カート内</h1>
+<h1 style="magin-bottom: 20px;">カート内の確認</h1>
 <% if !@order_item.nil? && @order_item.errors.any? %>
 	<div class="alert alert-danger">
 		<ul>
@@ -9,13 +9,11 @@
 	</div>
 <% end %>
 <% if @order_items.size == 0 %>
-	<p class="text-center">
-		カートに商品は入っていません。<br>
-		<%= link_to "買い物を続ける", products_path %>
-	</p>
+	<h3 class="text-center" style="margin-top: 20px; margin-bottom: 30px;">カートに商品は入っていません。</h3>
+		<%= link_to "買い物を続ける", products_path, class:"square__btn", style:"margin-bottom: 20px;" %>
 <% else %>
 	<% @order_items.each do |order_item| %>
 		<%= render 'carts/cart_row',confirm:false, product: order_item.product, order_item: order_item, show_total: true %>
 	<% end %>
-	<%= link_to "商品を購入する", buy_cart_path %>
+	<%= link_to "商品を購入する", buy_cart_path, class:"square__btn", style:"margin-top: 20px; margin-bottom: 20px;" %>
 <% end %>
