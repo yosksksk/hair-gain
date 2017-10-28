@@ -9,34 +9,34 @@
   <section class="shop__side">
     <h2 class="category__title">カテゴリーから絞る</h2>
     <div class="category">
-      <h3 class="category__small--title">育毛剤</h3>
+      <h3 class="category__small--title" style="text-align: left;">育毛剤</h3>
       <ul class="category__small">
         <% @products.where(category: "growth").each do |product| %>
-          <li><%= link_to  product.name, product_path(product) %></li>
+          <li style="text-align: left;"><%= link_to  product.name, product_path(product) %></li>
         <% end %>
       </ul>
     </div>
     <div class="category">
-      <h3 class="category__small--title">育毛サプリメント</h3>
+      <h3 class="category__small--title" style="text-align: left;">育毛サプリメント</h3>
       <ul class="category__small">
         <% @products.where(category: "supplement").each do |product| %>
-          <li><%= link_to  product.name, product_path(product) %></li>
+          <li style="text-align: left;"><%= link_to  product.name, product_path(product) %></li>
         <% end %>
       </ul>
     </div>
     <div class="category">
-      <h3 class="category__small--title">発毛剤</h3>
+      <h3 class="category__small--title" style="text-align: left;">発毛剤</h3>
       <ul class="category__small">
         <% @products.where(category: "treatment").each do |product| %>
-          <li><%= link_to  product.name, product_path(product) %></li>
+          <li style="text-align: left;"><%= link_to  product.name, product_path(product) %></li>
         <% end %>
       </ul>
     </div>
     <div class="category">
-      <h3 class="category__small--title">育毛トニック</h3>
+      <h3 class="category__small--title" style="text-align: left;">育毛トニック</h3>
       <ul class="category__small">
         <% @products.where(category: "tonic").each do |product| %>
-          <li><%= link_to  product.name, product_path(product) %></li>
+          <li style="text-align: left;"><%= link_to  product.name, product_path(product) %></li>
         <% end %>
       </ul>
     </div>

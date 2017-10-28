@@ -1,72 +1,70 @@
-<div class="user-form">
+<div class="user-form" style="">
 	<div class="user-form-header">新規登録</div>
 	<%= form_with(model: user, local: true,class: "user-form-container") do |form| %>
 	<% if user.errors.any? %>
-	<div id="error_explanation">
-		<h2><%= pluralize(user.errors.count, "error") %>
-			prohibited this user from being saved:</h2>
-		<ul>
-			<% user.errors.full_messages.each do |message| %>
-			<li><%= message %></li>
-			<% end %>
-		</ul>
-	</div>
+		<div id="error_explanation">
+			<h2><%= pluralize(user.errors.count, "error") %>
+				prohibited this user from being saved:</h2>
+			<ul>
+				<% user.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
 	<% end %>
 
-<table id="sign-up-table" rules="all">
-	<tr>
-		<th><%= form.label "名前" %></th>
-		<td><%= form.text_field :name%></td>
-	</tr>
-	<tr>
-		<th><%= form.label "なまえ" %></th>
-		<td><%= form.text_field :reading_name%></td>
-	</tr>
-	<tr>
-		<th><%= form.label "性別" %></th>
-		<td>
-			<label>男性<%= form.radio_button :gender ,0 , :checked => "checked"%></label>
-			<label>女性<%= form.radio_button :gender, 1%></label>
-		</td>
-	</tr>
-	<tr>
-		<th><%= form.label "生年月日	" %></th>
-		<td><%= form.date_select :birthdate, {
-			:use_month_numbers => true ,
-			default:Date.new(1989, 1, 1),
-			start_year: 1930,
-			end_year: (Time.now.year - 18)
-			}%></td>
-	</tr>
-	<tr>
-		<th><%= form.label "メールアドレス" %></th>
-		<td><%= form.email_field :email%></td>
-	</tr>
-	<tr>
-		<th><%= form.label "パスワード" %></th>
-		<td><%= form.password_field :password%></td>
-	</tr>
-	<tr>
-		<th><%= form.label "パスワード(確認)" %></th>
-		<td><%= form.password_field :password_confirmation%></td>
-	</tr>
-	<tr>
-		<th><%= form.label "電話番号" %></th>
-		<td><%= form.number_field :tel%></td>
-	</tr>
-	<tr>
-		<th><%= form.label "郵便番号(「-」無し)" %></th>
-		<td><%= form.text_field :post_code%></td>
-	</tr>
-	<tr>
-		<th><%= form.label "住所" %></th>
-		<td><%= form.text_field :address%></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			 <%= submit_tag "登録する" %>
-		</td>
-	</tr>
-</table>
-<% end %>
+	<table id="sign-up-table" rules="all">
+		<tr>
+			<th><%= form.label "名前" %></th>
+			<td><%= form.text_field :name%></td>
+		</tr>
+		<tr>
+			<th><%= form.label "なまえ" %></th>
+			<td><%= form.text_field :reading_name%></td>
+		</tr>
+		<tr>
+			<th><%= form.label "性別" %></th>
+			<td>
+				<label style="display:inline-block">男性</label>
+				<%= form.radio_button :gender ,0 , :checked => "checked", style:"width: 20px; display: inline-block;" %><br>
+				<label style="display:inline-block">女性</label>
+				<%= form.radio_button :gender, 1 , style:"width: 20px; display: inline-block;" %>
+			</td>
+		</tr>
+		<tr>
+			<th><%= form.label "生年月日	" %></th>
+			<td><%= form.date_select :birthdate, {
+				:use_month_numbers => true ,
+				default:Date.new(1989, 1, 1),
+				start_year: 1930,
+				end_year: (Time.now.year - 18)
+				}%></td>
+		</tr>
+		<tr>
+			<th><%= form.label "メールアドレス" %></th>
+			<td><%= form.email_field :email%></td>
+		</tr>
+		<tr>
+			<th><%= form.label "パスワード" %></th>
+			<td><%= form.password_field :password%></td>
+		</tr>
+		<tr>
+			<th><%= form.label "パスワード(確認)" %></th>
+			<td><%= form.password_field :password_confirmation%></td>
+		</tr>
+		<tr>
+			<th><%= form.label "電話番号" %></th>
+			<td><%= form.number_field :tel%></td>
+		</tr>
+		<tr>
+			<th><%= form.label "郵便番号(「-」無し)" %></th>
+			<td><%= form.text_field :post_code%></td>
+		</tr>
+		<tr>
+			<th><%= form.label "住所" %></th>
+			<td><%= form.text_field :address%></td>
+		</tr>
+	</table>
+	<%= submit_tag "登録する", class:"square__btn", style:"" %>
+	<% end %>
 </div>
