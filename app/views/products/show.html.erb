@@ -40,7 +40,15 @@
         </div>
         <%= f.hidden_field :product_id, value: @product.id %>
         <div style="text-align: left;">
-          <%= f.submit "カートに入れる", class:"square__btn", style:"border: none;" %>
+          <% if logged_in? %>
+            <%= f.submit "カートに入れる", class:"square__btn", style:"border: none;" %>
+          <% else %>
+            <p style="margin: 10px;">購入には新規登録/ログインが必要です。</p>
+            <div>
+              <%= link_to "ログインはこちら", login_path %><br>
+              <%= link_to "新規登録はこちら", signup_path %>
+          </div>
+          <% end %>
       </div>
       <% end %>
     </section>
